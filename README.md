@@ -23,3 +23,22 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 
 ## How do I deploy this?
 Vercel
+
+# Required Enviroment Variables
+1. Google
+```
+GOOGLE_CLIENT_ID=[ID]
+GOOGLE_CLIENT_SECRET=[SECRET]
+```
+
+2. GitHub
+```
+GITHUB_CLIENT_ID=[ID]
+GITHUB_CLIENT_SECRET=[SECRET]
+```
+
+3. NEXT
+```
+NEXTAUTH_SECRET=[SECRET]
+NEXTAUTH_URL=http://localhost:3000 | https://api.httpete.dev
+```

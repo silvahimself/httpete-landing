@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { auth } from "~/server/auth";
 import "~/styles/globals.css";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -23,10 +24,10 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <TooltipProvider delayDuration={100}>
-
       <html lang="en" className={`${GeistSans.variable}`}>
         <body className="bg-gray-900 text-gray-100">
           {children}
+          <Analytics  />
         </body>
       </html>
       </TooltipProvider>

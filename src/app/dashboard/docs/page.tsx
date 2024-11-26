@@ -95,7 +95,7 @@ const sampleDocs = {
 
 
 
-export default function DocsPage(props: DocsPageProps) {
+const DocsPage = (props: DocsPageProps) => {
     const itemsPerPage = 1
     const {data:session} = useSession();
 
@@ -156,3 +156,5 @@ export default function DocsPage(props: DocsPageProps) {
             </div>
         </main>)
 }
+
+export default DocsPage;

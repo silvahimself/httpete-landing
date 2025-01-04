@@ -28,13 +28,10 @@ export default function Header() {
           </Link>
           <nav>
             <ul className="flex space-x-4">
-              {!isMobile() && <li><Link href="#features" className="hover:text-red-500 transition duration-300">Features</Link></li>}
-              <li><Link href="#pricing" className="hover
-:text-red-500 transition duration-300">Pricing</Link></li>
-              {!isMobile() && <li><Link href="#faq" className="hover:text-red-500 transition duration-300">FAQ</Link></li>}
-              {!isMobile() && <li><Link href="#contact" className="hover:text-red-500 transition duration-300">Contact</Link></li>}
-              <li><Link href="/auth/login" className="bg-red-500 p-3 rounded-lg hover:text-red-500 hover:bg-transparent hover:border-2 hover:border-red-500 transition duration-300">Sign In</Link></li>
-              {!isMobile() && <li><Link href="/auth/register" className="bg-white p-3 rounded-lg hover:text-white hover:bg-transparent hover:border-2 hover:border-white text-black transition duration-300">Sign up</Link></li>}
+              <li><Link href="#features" className="hover:text-red-500 transition duration-300">Features</Link></li>
+              <li><Link href="#faq" className="hover:text-red-500 transition duration-300">FAQ</Link></li>
+              <li><Link href="#pricing" className="hover:text-red-500 transition duration-300">Pricing</Link></li>
+              <li><Link href="#contact" className="hover:text-red-500 transition duration-300">Contact</Link></li>
             </ul>
           </nav>
         </div>

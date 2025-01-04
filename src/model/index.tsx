@@ -1,3 +1,5 @@
+import { Session } from "next-auth";
+
 export type PageProps = {
   env: Env
 }
@@ -48,12 +50,12 @@ export type Endpoint = {
     method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
     headers: string
     body: string
-    doc: Doc
+    documentation: Doc
 }
 
 export type Doc = {
   id: number,
-  type: 'document' | 'folder',
+  type: 'document' | 'folder' | 'file',
   title: string,
   text: string,
   updatedBy?: string | null,
@@ -71,4 +73,6 @@ export type DocsPageProps = {
   setActiveDocumentationText: (txt: string) => void;
   setEditingTitle: (editing: boolean) => void;
   isMobile:boolean,
+  session: Session,
+  docs: Doc[]
 }

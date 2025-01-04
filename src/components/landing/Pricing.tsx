@@ -1,5 +1,7 @@
+'use client'
+
 import { ArrowRight, Check, X } from 'lucide-react'
-import Link from 'next/link'
+import { Button } from '../ui/button'
 
 const plans = [
   {
@@ -52,11 +54,11 @@ const plans = [
   }
 ]
 
-export default function Pricing() {
+export default function Pricing({openWaitlistModal} : {openWaitlistModal: () => void}) {
   return (
     <section id='pricing' className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Pricing Plans</h2>
+      <div className="mx-auto">
+        <h2 className="text-7xl font-bold text-center mb-12">Pricing</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <div key={index} className="bg-gray-800 p-8 rounded-lg shadow-lg">
@@ -76,10 +78,12 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Link href='/register' className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center transition duration-300">
-                Choose Plan
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center transition duration-300"
+              onClick={openWaitlistModal}
+              >
+                Join Waitlist
               <ArrowRight className="ml-2" />
-            </Link>
+            </Button>
             </div>
           ))}
         </div>

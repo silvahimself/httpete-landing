@@ -26,3 +26,9 @@ export async function createNewWorkspace(dto: NewWorkspaceDTO): Promise<Workspac
             return {} as Workspace;
         })
 }
+
+export async function getWorkspaces(userId: number)
+{
+    return await axios.get(baseUrl + '/workspace/get-for-user?userId=' + userId)
+        .then(res => {return res.data as Workspace[];}) || [] as Workspace[]
+}

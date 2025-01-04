@@ -1,4 +1,5 @@
 import { Code, BookOpen, Zap, Users } from 'lucide-react'
+import Pete from './Pete'
 
 const features = [
   {
@@ -25,8 +26,8 @@ const features = [
 
 export default function Features() {
   return (
-    <section id='features' className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
-      <div className="max-w-7xl mx-auto">
+    <section id='features' style={{maxWidth:'1400px'}} className=" rounded-lg py-10 mt-8 md:m-8 lg:m-8 px-8 border-8 border-gray-800">
+      <div className="mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
@@ -37,6 +38,7 @@ export default function Features() {
             </div>
           ))}
         </div>
+        {/* <Pete /> */}
       </div>
     </section>
   )

@@ -23,18 +23,18 @@ export function ImageModal({ src, alt }: ImageModalProps) {
   return (
     <>
       <div 
-        className="relative w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden cursor-pointer"
+        className="relative mx-auto w-3/4 aspect-video rounded-lg overflow-hidden cursor-pointer"
         onClick={() => setOpen(true)}
       >
         <Image
           src={src}
           alt={alt}
           fill
-          className=""
+          className="p-8"
         />
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-2 m-6 rounded-xl">
+        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-4 border-opacity-80 border-red-400 m-6 rounded-xl">
           <div 
           style={{ height: '100vh'}}
             onWheel={handleWheel}

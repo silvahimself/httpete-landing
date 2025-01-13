@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm text-gray-500 mb-6">Effective Date: January 13, 2025</p>
           
           <p className="mb-6 text-gray-400">
-            Hey! We're HttPete LDA ("we," "our," or "us"), and we're just like you - developers who care about privacy and doing things the right way. This Privacy Policy is here to explain how we handle your information when you join the waitlist for the HttPete beta program. We've got your back, and protecting your data is a top priority for us.
+            Hey! We're HttPete ("we," "our," or "us"), and we're just like you - developers who care about privacy and doing things the right way. This Privacy Policy is here to explain how we handle your information when you join the waitlist for the HttPete beta program. We've got your back, and protecting your data is a top priority for us.
           </p>
 
           <section className="mb-8">
@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-semibold text-red-400 mb-2">8. Talk to Us</h2>
             <p className="mb-1 text-gray-400">Got questions or concerns? Reach out! Here's how you can get in touch:</p>
             <p className="text-gray-400">
-              HttPete LDA<br />
+              HttPete<br />
               <strong>Email:</strong> <a href="mailto:support@httpete.dev" className="text-red-300 underline hover:underline">support@httpete.dev</a>
             </p>
           </section>

@@ -22,14 +22,14 @@ export function WaitlistModal() {
     <>
       <Button 
         onClick={() => setOpen(true)}
-        className="bg-red-400 hover:bg-red-500 text-red-950 font-bold py-2 px-4 rounded"
+        className="bg-red-600 hover:bg-red-500 text-white font-bold py-8 text-3xl px-12 rounded-full" 
       >
         Get Notified When Beta Opens
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-[425px] bg-gray-900 text-white border-red-400">
-          <DialogHeader>
             <DialogTitle>Join the Beta Waitlist</DialogTitle>
+          <DialogHeader>
             <DialogDescription>
               Enter your email to be notified when we launch the Beta program. We will be taking in
               batches of 50 people at a time. By signing up, you agree to our 

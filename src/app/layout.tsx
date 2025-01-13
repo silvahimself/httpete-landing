@@ -1,12 +1,11 @@
 import { SessionProvider } from "next-auth/react";
 import { GeistSans } from "geist/font/sans";
 import { Metadata } from "next";
-import { auth, getWorkspaces } from "~/server/auth";
+import { auth } from "~/server/auth";
 import "~/styles/globals.css";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { Analytics } from "@vercel/analytics/react"
-import { cookies } from "next/headers";
-import { NextResponse } from 'next/server';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "HttPete",
@@ -28,6 +27,7 @@ export default async function RootLayout({
         <body className="bg-gray-900 text-gray-100 scrollbar-thin scrollbar-thumb-red-400 scrollbar-track-slate-500 h-full">
           {children}
           <Analytics  />
+          <SpeedInsights />
         </body>
       </html>
       </TooltipProvider>

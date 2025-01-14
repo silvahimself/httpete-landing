@@ -23,10 +23,12 @@ export default function ComingSoon() {
           Coming soon to revolutionize backend development.
         </p>
 
+    <div className='hidden md:block lg:block'>
         <ImageModal
           src="https://4h8dx3lodh.ufs.sh/f/5VzIfIO6yTtGyVOHuFShGSbxpocvdO2lHB3AsiTCLP8KND0R"
           alt="API Testing Platform Interface"
           />
+    </div>
         <WaitlistModal />
 
         <div className="mt-12 flex flex-col text-center justify-center">

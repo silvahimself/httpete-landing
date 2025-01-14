@@ -22,7 +22,7 @@ export function WaitlistModal() {
     <>
       <Button 
         onClick={() => setOpen(true)}
-        className="bg-red-600 hover:bg-red-500 text-white font-bold py-8 text-3xl px-12 rounded-full" 
+        className="bg-red-600 mx-auto hover:bg-red-500 text-white font-bold sm: py-4 md:py-8 sm:text-xl lg:text-4xl md:text-3xl md:pd-8 lg:p-8 rounded-full"    
       >
         Get Notified When Beta Opens
       </Button>

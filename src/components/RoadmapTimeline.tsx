@@ -41,7 +41,7 @@ function TimelineEntry({ summary }: { summary: SprintSummary }) {
 
 export default function RoadmapTimeline() {
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-gray-100 p-6">
+    <div id="roadmap" className="min-h-screen w-full bg-gray-900 text-gray-100 p-6">
       <div style={{maxWidth:'1400px'}} className="max-w-3xl mx-auto">
         <div className="mb-12 text-center">
           <h1 className="text-6xl font-bold mb-4">Roadmap</h1>

@@ -18,8 +18,7 @@ export interface SprintSummary {
       {
       sprintNumber: 1,
       title: "Beta Launch",
-      description: "Cross platform desktop application, basic HTTP client with simple markdown "+
-      "documentation on a per-request basis. ",
+      description: "Local database options for storing requests and responses using SQLite or JSON.",
       status: "upcoming",
       startDate: "Feb 2025"
     },

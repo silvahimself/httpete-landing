@@ -4,6 +4,7 @@ import Features from '~/components/landing/Features'
 import FAQ from '~/components/landing/FAQ'
 import { SocialIcon } from 'react-social-icons'
 import { Separator } from '~/components/ui/separator'
+import RoadmapTimeline from '~/components/RoadmapTimeline'
 
 export default function ComingSoon() {
   return (
@@ -41,6 +42,7 @@ export default function ComingSoon() {
       orientation="horizontal"
       style={{ backgroundColor: '#cb2c2c' }}
     />
+
   </div>
   <div className="mt-4 flex justify-center space-x-4">
     <SocialIcon
@@ -73,6 +75,9 @@ export default function ComingSoon() {
       </div>
       <div className='m-4'>
         <Features />
+      </div>
+      <div className='m-4 w-full'>
+        <RoadmapTimeline/>
       </div>
       <div className='m-4 w-full'>
         <FAQ />

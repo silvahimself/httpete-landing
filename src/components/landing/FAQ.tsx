@@ -12,10 +12,10 @@ const faqs = [
   {
     question: 'How does the AI-powered assistance work?',
     answer:
-      <p className="text-gray-300">
+      <div className="text-gray-300">
         <Tooltip>
           <TooltipTrigger asChild>
-            <span className='text-yellow-400 hover:cursor-pointer hover:ring-2 ring-yellow-500 mr-0 hover:text-black hover:bg-yellow-400 p-1 rounded-full'>
+            <span className='text-yellow-400 -ml-1 hover:cursor-pointer hover:ring-2 ring-yellow-500 mr-0 hover:text-black hover:bg-yellow-400 p-1 rounded-full'>
               Pete
             </span>
           </TooltipTrigger>
@@ -30,33 +30,33 @@ const faqs = [
           </TooltipContent>
         </Tooltip>
         can help with formatting, transforming request data, suggesting tests, structuring documentation, and even generating step-by-step guides and technical documentation based on request data.
-      </p>
+      </div>
   },
   {
     question: 'Is there a limit to the number of API calls I can make?',
     answer: <p className="text-gray-300">Absolutely not! HttPete is an API client, all requests are made from your machine, so it would make no sense for us to limit that.
-    There are certain usage limits on the free plan, such as number of documents or maximum document length, but those are associated with real costs on our end. However, since the
-    project is <a href='https://github.com/silvahimself/httpete'>open source</a> you can host everything yourself and lift these limits.
-    Making API calls will <b className='text-gray-100'><u>always</u></b> be <b className='text-gray-100'><u>free and unlimited</u></b>
+    If you choose to self-host, there are no costs for you. If you decide to go with our cloud hosting, there are certain usage limits on the free plan, such as number of documents or maximum document length, as those 
+    are associated with real costs on our end. However, you'll always be able to host everything yourself and lift these limits.
     </p>
   },
   {
     question: 'Can I use HttPete for both internal and public API documentation?',
     answer: <p className="text-gray-300">
       Yes! HttPete allows for endpoint-specific documentation, as well as generalized documentation. Additionally,
-      HttPete supports different Categories, Tags, and even diagrams!
+      HttPete will also be able to generate static html 
+      websites from your documentation, making sharing documentation just one click away.
     </p>
   },
   {
     question: 'What platforms does HttPete support?',
     answer: <p className="text-gray-300">
-      HttPete is a cross-platform application, supporting Windows, macOS, and Linux, ensuring compatibility with your development environment of choice.
+      HttPete is a cross-platform application, supporting Windows, macOS, and Linux, ensuring compatibility with [almost] any development environment.
     </p>
   },
   {
     question: 'Is HttPete open source?',
     answer: <p className="text-gray-300">
-      Yes! HttPete is open source and hosted on GitHub. You can explore the source code, contribute to development, or even host your own instance to customize its functionality to your needs.
+      Not yet, but we are working on it! We will be open sourcing the project as soon as we have a stable version ready for public use.
     </p>
   },
   {

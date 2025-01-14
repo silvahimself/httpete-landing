@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback } from 'react'
 import Image from 'next/image'
-import { Dialog, DialogContent } from "~/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "~/components/ui/dialog"
 
 interface ImageModalProps {
   src: string
@@ -35,6 +35,9 @@ export function ImageModal({ src, alt }: ImageModalProps) {
       </div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 border-4 border-opacity-80 border-red-400 m-6 rounded-xl">
+          <DialogTitle className="text-xl font-bold">
+          HttPete</DialogTitle>
+            {alt}
           <div 
           style={{ height: '100vh'}}
             onWheel={handleWheel}

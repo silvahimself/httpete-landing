@@ -301,17 +301,16 @@ export default function HttpPeteArticle() {
           color: #fff;
         }
         h3 {
-          font-size: 2.5rem;
+          font-size: 2rem;
           font-weight: bold;
-          margin-top: 1.5rem;
-          margin-bottom: 0.75rem;
+          margin-top: 0.5rem;
           color: #fff;
         }
         a {
           text-decoration: underline
         }
         p {
-        font-size:1.5rem;
+        font-size:1.25rem;
         margin-bottom: 1rem;
         line-height: 1.6;
         }

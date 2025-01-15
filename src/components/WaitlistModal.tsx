@@ -22,9 +22,9 @@ export function WaitlistModal() {
     <>
       <Button 
         onClick={() => setOpen(true)}
-        className="bg-red-600 mx-auto hover:bg-red-500 text-white font-bold sm: py-4 md:py-8 sm:text-xl lg:text-4xl md:text-3xl md:pd-8 lg:p-8 rounded-full"    
+        className="bg-red-600 mx-auto hover:bg-red-500 text-white font-bold sm: py-4 md:py-8 sm:text-xl lg:text-2xl md:text-3xl md:pd-8 lg:p-8 rounded-full"    
       >
-        Get Notified When Beta Opens
+        Sign up for Beta
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-[425px] bg-gray-900 text-white border-red-400">

@@ -25,21 +25,21 @@ export interface SprintSummary {
     {
       sprintNumber: 2,
       title: "Beta Round 2",
-      description: "Dedicated documentation page. Generalized documentation not necessarily tied to a request.",
+      description: "Deeper OpenAPI support. Support for OAuth 2.0.",
       status: "planned",
       startDate: "Mar 2025"
     },
     {
       sprintNumber: 3,
       title: "Beta round 3",
-      description: "Open API import and export. Automatically updated documentation and OpenAPI spec when changes in requests are detected. ",
+      description: "Notifications and document tracking",
       status: "planned",
       startDate: "Apr 2025"
     },
     {
       sprintNumber: 4,
       title: "Public Beta",
-      description: "Add support for environment variables, OAuth 2.0, and [TBD] third-party integrations",
+      description: "Environment variables, OAuth 2.0, and third-party integrations",
       status: "planned",
       startDate: "May 2025"
     },

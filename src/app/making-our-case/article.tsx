@@ -7,7 +7,7 @@ const articleContent = `
 
 Picture the workflow of the average developer. We know this changes a lot based on personal preference and the specific contexts, but you can replace any of them by any given variation, our point remains the same. 
 
-We’ve highlighted the steps “fixed” by industry standard solutions with a ✅ and ❓are potential failure points and opportunities for information to go out of synch.  It mostly goes like this:
+We’ve highlighted the steps “fixed” by industry standard solutions with a ✅, and ❓are potential failure points and opportunities for information to go out of synch (seealso: dirty).  It mostly goes like this:
 
 \`\`\`
 > Some arbitrary amount meetings of any given flavor of agile happens

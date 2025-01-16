@@ -23,6 +23,9 @@ export default function ComingSoon() {
           Coming soon to revolutionize backend development.
         </p>
 
+        <p className='text-xl mb-8 text-gray-300'>
+          For the full breakdown, read <a href="/making-our-case" className="text-red-400">making our case</a>
+        </p>
     <div className='hidden md:block lg:block'>
         <ImageModal
           src="https://4h8dx3lodh.ufs.sh/f/5VzIfIO6yTtGyVOHuFShGSbxpocvdO2lHB3AsiTCLP8KND0R"

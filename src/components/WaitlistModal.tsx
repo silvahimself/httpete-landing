@@ -6,20 +6,39 @@ import { Button } from "~/components/ui/button"
 import { Input } from "~/components/ui/input"
 import { submitEmail } from '../server/actions'
 import { Label } from './ui/label'
+import Loading from './Loading'
 
 export function WaitlistModal() {
   const [open, setOpen] = useState(false)
   const [message, setMessage] = useState('')
   const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  async function handleSubmit(formData: FormData) {
-    console.log('submitting join...', formData.get('email'))
-    const result = await submitEmail(formData)
+  async function handleSubmit(name : string, email : string) {
+    
+    const result = await submitEmail(name, email)
+    .then(res => {
+      setLoading(false)
+      setMessage(res.message)
+      setSuccess(res.statusCode?.toString().startsWith('2') ?? false)
+    })
+    .catch(err => {
+      setLoading(false)
+      console.log('err', err)
+    })
     console.log('res', result)
-    setMessage(result.message)
-    setSuccess(result.statusCode?.toString().startsWith('2') ?? false)
   }
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
+  function handleChange(e: any) {
+    setName(e.target.value)
+  }
+
+  function handleEmailChange(e: any) {
+    setEmail(e.target.value)
+  }
   return (
     <>
       <Button 
@@ -38,7 +57,7 @@ export function WaitlistModal() {
               <a href="/privacy" className="underline">Privacy Policy</a>.
             </DialogDescription>
           </DialogHeader>
-          <form action={handleSubmit}>
+          <div>
             <div className="grid gap-4 py-4">
               <Label htmlFor='name'>Name</Label>
               <Input
@@ -46,6 +65,8 @@ export function WaitlistModal() {
                 name="name"
                 type="text"
                 placeholder="Enter your name"
+                value={name}
+                onChange={handleChange}
                 className="bg-gray-800 border-gray-700 text-white"
                 required
               />
@@ -54,15 +75,25 @@ export function WaitlistModal() {
                 id="email"
                 name="email"
                 type="email"
+                value={email}
+                onChange={handleEmailChange}
                 placeholder="Enter your email"
                 className="bg-gray-800 border-gray-700 text-white"
                 required
               />
-              <Button type="submit" className="bg-red-400 hover:bg-red-500 text-red-950">
-                Submit
+              {loading && <Loading text='Submitting...' /> }
+              <Button
+              className={"bg-red-400 hover:bg-red-500 text-red-950 " + (loading && 'hidden')}
+              onClick={() => {
+                setLoading(true)
+                setMessage('');
+                handleSubmit(name, email)
+              }}
+              >
+              Submit
               </Button>
             </div>
-          </form>
+          </div>
           {message && <p className={"mt-2 " + (success ? "text-green-400" : "text-red-400")}>{message}</p>}
         </DialogContent>
       </Dialog>

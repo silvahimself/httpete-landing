@@ -9,9 +9,8 @@ interface WaitlistResponse {
   statusCode: number
 }
 
-export async function submitEmail(formData: FormData) {
-  const email = formData.get('email')
-  const name = formData.get('name')
+export async function submitEmail(name:string, email:string) {
+  
   const base = process.env.NEXT_PUBLIC_API_URL 
     ?? "https://api.httpete.dev/api";
   

@@ -10,12 +10,14 @@ import { Label } from './ui/label'
 export function WaitlistModal() {
   const [open, setOpen] = useState(false)
   const [message, setMessage] = useState('')
+  const [success, setSuccess] = useState(false)
 
   async function handleSubmit(formData: FormData) {
     console.log('submitting join...', formData.get('email'))
     const result = await submitEmail(formData)
     console.log('res', result)
     setMessage(result.message)
+    setSuccess(result.statusCode?.toString().startsWith('2') ?? false)
   }
 
   return (
@@ -61,7 +63,7 @@ export function WaitlistModal() {
               </Button>
             </div>
           </form>
-          {message && <p className="text-green-400 mt-2">{message}</p>}
+          {message && <p className={"mt-2 " + (success ? "text-green-400" : "text-red-400")}>{message}</p>}
         </DialogContent>
       </Dialog>
     </>

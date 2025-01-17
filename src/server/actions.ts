@@ -3,34 +3,49 @@
 import axios from "axios"
 import { headers } from 'next/headers'
 
+interface WaitlistResponse {
+  result: boolean
+  message: string
+  statusCode: number
+}
+
 export async function submitEmail(formData: FormData) {
   const email = formData.get('email')
   const name = formData.get('name')
-  const base = "https://api.httpete.dev/"
+  const base = process.env.NEXT_PUBLIC_API_URL 
+    ?? "https://api.httpete.dev/";
   
   // Get IP address from headers
   const headersList = await headers()
   const forwarded = headersList.get('x-forwarded-for')
   const clientIp = forwarded ? forwarded.split(',')[0] : headersList.get('x-real-ip')
-  
-  let result = -1
-  let message = ""
 
   try {
-    const response = await axios.post(base + 'api/landing/join-waitlist', {
+    const response = await axios.post<WaitlistResponse>(base + '/landing/join-waitlist', {
       name,
       email,
       clientIp
     })
     
-    console.log(`Email submitted: ${email} - ${response.data.message}`)
-    result = 1
-    message = "Thank you for joining!"
+    return {
+      success: response.data.result,
+      message: response.data.message,
+      statusCode: response.data.statusCode
+    };
   } catch (err) {
-    console.error('Error submitting to waitlist:', err)
-    result = -1
-    message = 'An error occurred while joining the waitlist: ' + err;
+    if (axios.isAxiosError(err) && err.response?.data?.message) {
+      // If we have a structured error response from the API, use that message
+      return {
+        success: false,
+        message: err.response.data.message,
+        statusCode: err.response.status
+      }
+    }
+    
+    // Fallback for network/other errors
+    return {
+      success: false,
+      message: 'An error occurred while joining the waitlist. Please try again later.'
+    }
   }
-
-  return { success: result !== -1, message }
 }

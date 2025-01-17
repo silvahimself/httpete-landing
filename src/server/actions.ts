@@ -13,7 +13,7 @@ export async function submitEmail(formData: FormData) {
   const email = formData.get('email')
   const name = formData.get('name')
   const base = process.env.NEXT_PUBLIC_API_URL 
-    ?? "https://api.httpete.dev/";
+    ?? "https://api.httpete.dev/api";
   
   // Get IP address from headers
   const headersList = await headers()
